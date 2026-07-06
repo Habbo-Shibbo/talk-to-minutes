@@ -1,0 +1,5 @@
+transcripts/*
+reports/*
+!transcripts/.gitkeep
+!reports/.gitkeep
+.DS_Store
