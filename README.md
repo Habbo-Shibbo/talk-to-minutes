@@ -2,7 +2,9 @@
 
 會議錄音 → 結構化報告的 agent 工具。
 
-- **安全**：逐字稿由 OpenAI Whisper 在你的電腦本機產生，錄音與會議內容不上傳任何伺服器。
+- **安全**：錄音檔由 OpenAI Whisper 在你的電腦本機轉成文字，聲音檔永遠不離開你的電腦；
+  逐字稿文字由你自己的 AI（Claude Code／Codex）整理成報告——資料只經過你本來就在用的
+  AI 供應商，不經過任何第三方會議服務。
 - **零訂閱**：不需訂閱第三方會議工具。報告由你既有的 AI harness（Claude Code 或
   OpenAI Codex）整理，沒有額外費用。
 - **無長度限制**：Whisper 對音檔長度沒有上限，幾小時的會議也能轉，只是處理時間較久。
@@ -28,27 +30,16 @@ chmod +x transcribe.sh
 
 ## 怎麼用
 
-進到這個資料夾，打開你的 harness，用一句話交辦即可：
+進到你放 talk-to-minutes 的資料夾（不確定路徑？在終端機打 `cd ` 加空格，把資料夾
+從 Finder 拖進來，路徑會自動補上），打開你的 harness：
 
-**OpenAI Codex：**
+**OpenAI Codex：** 執行 `codex`
+**Claude Code：** 執行 `claude`
 
-```bash
-cd talk-to-minutes
-codex
-```
-
-然後說：「幫我把 ~/Downloads/會議錄音.m4a 做成會議報告」。
-Codex 會自動讀本資料夾的 `AGENTS.md`，照流程跑：轉逐字稿 → 列出格式讓你選
+然後一句話交辦，例如：「幫我把這個錄音做成會議報告」，接著把錄音檔從 Finder
+拖進終端機視窗（路徑會自動填好），按 Enter。harness 會自動讀本資料夾的
+`AGENTS.md`（Claude Code 經 `CLAUDE.md`），照流程跑：轉逐字稿 → 列出格式讓你選
 → 產出報告存到 `reports/`。
-
-**Claude Code：**
-
-```bash
-cd talk-to-minutes
-claude
-```
-
-同一句話交辦即可（Claude Code 讀 `CLAUDE.md` → `AGENTS.md`）。
 
 ## 報告格式
 

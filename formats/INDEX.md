@@ -7,3 +7,4 @@ agent：把下表列給使用者選。新格式一律追加到表格尾端，編
 | 1 | general.md | 通用會議紀要 | 一般內部會議、不確定用哪個時的預設 |
 | 2 | client.md | 客戶會議報告 | 客戶拜訪、support/onboarding 會議、QBR |
 | 3 | exec-brief.md | 主管一頁簡報 | 向上匯報，主管只有一分鐘可看 |
+| 4 | 客戶就是上帝.md | 客戶會議報告 | 客戶拜訪、support/onboarding、續約或 QBR 會後內部同步與追蹤 |
