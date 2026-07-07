@@ -385,7 +385,8 @@ function openDoc(title, md, file){
     sub.style.display="flex";
     sub.innerHTML='<span class="dlg-path">'+esc(DATA.root+"/reports/"+file)+'</span>'+
       '<button onclick="copyPath(this)">複製路徑</button>'+
-      '<button class="wordbtn" onclick="downloadWord()">下載 Word 檔</button>';
+      '<button class="wordbtn" onclick="downloadDoc()" title="有裝 Microsoft Word 選這個">Word (.doc)｜你有 Office Word</button>'+
+      '<button class="wordbtn" onclick="downloadRtf()" title="沒裝 Word 選這個">Word (.rtf)｜Pages、TextEdit、Google Docs</button>';
   } else { sub.style.display="none"; }
   const dlg=document.getElementById("dlg");
   dlg.showModal(); document.getElementById("dlg-body").scrollTop=0;
@@ -463,12 +464,24 @@ function mdToRtf(md){
   out.push("}");
   return out.join("\\n");
 }
-function downloadWord(){
-  const blob=new Blob([mdToRtf(window.__docMd)],{type:"application/rtf"});
+function saveBlob(content,type,ext){
+  const blob=new Blob(content,{type:type});
   const a=document.createElement("a");
   a.href=URL.createObjectURL(blob);
-  a.download=window.__docFile.replace(/\\.md$/,".rtf");
+  a.download=window.__docFile.replace(/\\.md$/,ext);
   document.body.appendChild(a); a.click(); a.remove();
+}
+function downloadRtf(){
+  saveBlob([mdToRtf(window.__docMd)],"application/rtf",".rtf");
+}
+function downloadDoc(){
+  const html='<html xmlns:o="urn:schemas-microsoft-com:office:office" '+
+    'xmlns:w="urn:schemas-microsoft-com:office:word"><head><meta charset="utf-8"><style>'+
+    'body{font-family:"PingFang TC","Microsoft JhengHei",sans-serif;font-size:12pt;line-height:1.7;}'+
+    'h1{font-size:18pt;} h2{font-size:14pt;} table{border-collapse:collapse;}'+
+    'th,td{border:1pt solid #999;padding:4pt 8pt;} th{background:#f0f0f0;}'+
+    '</style></head><body>'+mdToHtml(window.__docMd)+"</body></html>";
+  saveBlob(["\\ufeff"+html],"application/msword",".doc");
 }
 
 const grid=document.getElementById("grid");
