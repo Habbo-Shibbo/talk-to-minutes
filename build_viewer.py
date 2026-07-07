@@ -836,9 +836,9 @@ const TOUR=[
   '<div class="role"><b>formats/ 資料夾</b>：你的格式庫，每個格式一張卡片。</div>'+
   '<div class="kpoint">報告不是在這個網頁生成的。我們需要透過終端機在本地先安裝轉錄引擎 openai-whisper（好處是沒有時長困擾、也沒有訂閱費），再透過「終端機裡面跑的 Claude Code 或 Codex」進行文字到報告的整理——你需要有 ChatGPT 帳號（免費帳號即可用 Codex，額度較小）或 Claude Pro 以上帳號。不用擔心，步驟很簡單，接下來會一步步教你。</div>'},
  {t:"第一次使用：下載與安裝（只做一次）",h:
-  '<div class="cmd-label">① 下載本工具。會 git 的人複製這行到終端機執行：</div>'+
+  '<div class="cmd-label">① 下載本工具。打開「終端機」(Terminal) app，複製這行、貼上、按 Enter：</div>'+
   '<div class="cmd-row"><span class="cmd">git clone https://github.com/Habbo-Shibbo/talk-to-minutes.git</span><button class="cmd-copy" onclick="copyCmd(this)">複製</button></div>'+
-  '<p style="font-size:14px;color:var(--muted);margin:4px 0 12px;">不熟 git？到 <a href="https://github.com/Habbo-Shibbo/talk-to-minutes">GitHub 頁面</a>按綠色「Code」按鈕 → Download ZIP → 解壓縮，會得到 talk-to-minutes-main 資料夾（跟 talk-to-minutes 一樣用）。</p>'+
+  '<p style="font-size:14px;color:var(--muted);margin:4px 0 12px;">跑完會在你的家目錄多出一個 talk-to-minutes 資料夾。若跳出「需要安裝開發者工具」，按「安裝」等它跑完再貼一次。不想用終端機？到 <a href="https://github.com/Habbo-Shibbo/talk-to-minutes">GitHub 頁面</a>按綠色「Code」按鈕 → Download ZIP → 解壓縮，得到 talk-to-minutes-main 資料夾（跟 talk-to-minutes 一樣用）。</p>'+
   '<p><b>Whisper 是什麼？</b>OpenAI 開源的語音辨識工具，把說話聲轉成文字。它<b>在你自己的電腦上跑</b>，免費、沒有字數限制、錄音檔不會上傳到任何地方。（之後 AI 整理報告時，送出去的只有轉好的文字，就像你平常貼文字給 AI 一樣——聲音永遠留在本機。）需要的電腦：能跑現行 macOS 的 Mac 都行，越新越快，Apple 晶片（M 系列）最順。</p>'+
   '<div class="cmd-label">② 裝 Homebrew（macOS 的軟體安裝器）：到 <a href="https://brew.sh">brew.sh</a> 照首頁指令貼一次。已經有就跳過。</div>'+
   '<div class="cmd-label">③ 裝 Whisper 本體，複製這行貼到終端機執行：</div>'+
