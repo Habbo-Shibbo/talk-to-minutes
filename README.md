@@ -11,6 +11,17 @@
 - **格式庫隨你累積**：報告格式存在 `formats/`，可隨時聊天新增。可根據會議的性質或
   匯報的對象點選不同的報告格式，由你指定每個格式的存檔檔名，方便下次選用。
 
+## 先看看再說（不用安裝）
+
+**線上展示版（含新手教學動畫）：https://habbo-shibbo.github.io/talk-to-minutes/**
+——先點這個，操作介面和完整教學都在裡面，看完再決定要不要裝。
+
+## 下載
+
+- 會 git：`git clone https://github.com/Habbo-Shibbo/talk-to-minutes.git`
+- 不會 git：本頁綠色「Code」按鈕 → Download ZIP → 解壓縮
+  （得到的資料夾叫 talk-to-minutes-main，一樣用）
+
 ## 安裝（第一次用，約 5 分鐘）
 
 需求：Mac + [Homebrew](https://brew.sh)。終端機執行：
